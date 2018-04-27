@@ -1,3 +1,3 @@
 [
-	{ "caption": "Open ConEmu Here", "command": "open_conemu_here", "args": {"paths": []} }
+	{ "caption": "Open Cmder Here", "command": "open_cmder_here", "args": {"paths": []} }
 ]
