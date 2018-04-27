@@ -21,5 +21,5 @@ Then use `Package Control` to add this repository and install this package.
 
 Licensed under MIT
 
-Copyright (c) 2015 [kiliwalk](https://github.com/kiliwalk) (c) 2018 [sharygin](https://github.com/sharygin)
+Copyright (c) 2015 [kiliwalk](https://github.com/kiliwalk) 
 
