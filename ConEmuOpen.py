@@ -1,6 +1,6 @@
 import os, sublime, sublime_plugin
 
-class ConEmuOpenCommand():
+class CmderOpenCommand():
     def get_project(self):
         has_project = 0
         if self.window.project_file_name(): # try project file name first
@@ -18,21 +18,21 @@ class ConEmuOpenCommand():
             return (None, None, 0)
         return (project_name, project_dir, has_project)
 
-    def open_conemu(self, dirname, title):
+    def open_cmder(self, dirname, title):
         command= "start cmder.exe /Single /Dir \""+dirname+"\" /cmdlist powershell -new_console:t:\""+title+"\""
         os.system(command)
 
 # open project folder
-class OpenConemuProjectCommand(sublime_plugin.WindowCommand, ConEmuOpenCommand):
+class OpenCmderProjectCommand(sublime_plugin.WindowCommand, CmderCommand):
     def run(self):
         project_name, project_dir, has_project = self.get_project()
         if not project_name:
             return
 
-        self.open_conemu(project_dir, project_name)
+        self.open_cmder(project_dir, project_name)
 
 # open "here" folder
-class OpenConemuHereCommand(sublime_plugin.WindowCommand, ConEmuOpenCommand):
+class OpenCmderHereCommand(sublime_plugin.WindowCommand, CmderOpenCommand):
     def run(self, paths=[]):
         project_name, project_dir, has_project = self.get_project()
         if not project_name:
@@ -58,4 +58,4 @@ class OpenConemuHereCommand(sublime_plugin.WindowCommand, ConEmuOpenCommand):
             else:
                 title = project_name + ': ' + rel_path
 
-        self.open_conemu(heredir, title)
+        self.open_cmder(heredir, title)
